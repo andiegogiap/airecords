@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Enhanced Records Manager</title>
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --background-dark: #0a0a0f;
+        /* Glass-morphism values */
+        --card-bg: rgba(20, 20, 30, 0.65); /* More opaque for readability */
+        --card-bg-opaque: #0a0a14;
+        --card-border-color: rgba(255, 255, 255, 0.15); /* Subtle white border */
+
+        --primary-color: #ff00ff; /* Neon Pink/Magenta */
+        --primary-color-hover: #e600e6;
+        --neon-cyan: #00ffff;
+        --neon-green: #39ff14;
+        --neon-blue: #00bfff;
+        --neon-pink: #ff00ff;
+        --neon-yellow: #fafa00;
+        --text-color: #e0e0e0;
+        --text-color-darker: #a0a0a0;
+        --font-heading: 'Orbitron', sans-serif;
+        --font-body: 'Rajdhani', sans-serif;
+      }
+      html.dark {
+        color-scheme: dark;
+      }
+      body {
+        font-family: var(--font-body);
+        background-color: transparent; /* Make body transparent */
+        color: var(--text-color);
+        overflow-y: scroll;
+      }
+      #app-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background-image: url('https://images.unsplash.com/photo-1583359674849-a363d3987095?q=80&w=2574&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.6);
+      }
+      #root {
+        isolation: isolate; /* New stacking context */
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading);
+      }
+      /* Custom scrollbar for cyberpunk feel */
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 7px var(--neon-cyan);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 12px var(--neon-cyan);
+      }
+       .text-glow-primary {
+        text-shadow: 0 0 3px var(--primary-color), 0 0 8px var(--primary-color);
+      }
+       .text-glow-cyan {
+        text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+      }
+      .floating-nav-orb {
+        animation: pulse-glow 3s infinite ease-in-out;
+      }
+      @keyframes pulse-glow {
+        0%, 100% {
+          box-shadow: 0 0 15px var(--neon-cyan), 0 0 25px var(--neon-cyan);
+        }
+        50% {
+          box-shadow: 0 0 25px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+        }
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.9.0",
+    "@monaco-editor/react": "https://esm.sh/@monaco-editor/react@^4.7.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "remark-gfm": "https://esm.sh/remark-gfm@^4.0.1",
+    "js-beautify": "https://esm.sh/js-beautify@1.15.1",
+    "react-syntax-highlighter": "https://esm.sh/react-syntax-highlighter@^15.5.0",
+    "react-syntax-highlighter/": "https://esm.sh/react-syntax-highlighter@^15.5.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-[--background-dark]">
+    <div id="app-background"></div>
+    <div id="root"></div>
+</body>
+</html>

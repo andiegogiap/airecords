@@ -1,5 +1,5 @@
 {
-  "name": "Copy of AI-Enhanced Records Manager",
+  "name": "AERM-AI-Enhanced Records Manager",
   "description": "A single-page application to manage categorized records (USER, AI, SYSTEM) with CRUD functionality. Features AI-powered description generation.",
   "requestFramePermissions": [],
   "prompt": ""

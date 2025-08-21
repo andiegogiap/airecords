@@ -12,7 +12,8 @@ const navItems: { page: Page; label: string; icon: React.ReactNode }[] = [
     { page: 'records', label: 'Records', icon: <BookOpenIcon className="w-6 h-6"/> },
     { page: 'refinery', label: 'Refinery', icon: <WandIcon className="w-6 h-6"/> },
     { page: 'agents', label: 'Agents', icon: <UsersIcon className="w-6 h-6"/> },
-    { page: 'orchestration', label: 'Workbench', icon: <OrchestrationIcon className="w-6 h-6"/> },
+    { page: 'domainOrchestration', label: 'Orchestration', icon: <OrchestrationIcon className="w-6 h-6"/> },
+    { page: 'orchestration', label: 'Site Analysis', icon: <GlobeIcon className="w-6 h-6"/> },
     { page: 'files', label: 'GitHub Files', icon: <FolderIcon className="w-6 h-6"/> },
     { page: 'settings', label: 'Settings', icon: <SettingsIcon className="w-6 h-6"/> },
     { page: 'devtools', label: 'Dev Tools', icon: <DevToolsIcon className="w-6 h-6"/> },
@@ -22,7 +23,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({ currentPage, onNavigate }) =>
     const [isOpen, setIsOpen] = useState(false);
 
     const menuItems = navItems.map((item, index) => {
-        const angle = -90 - (index * (110 / (navItems.length - 1)));
+        const angle = -90 - (index * (120 / (navItems.length - 1)));
         const radius = 100;
         const x = radius * Math.cos(angle * Math.PI / 180);
         const y = radius * Math.sin(angle * Math.PI / 180);

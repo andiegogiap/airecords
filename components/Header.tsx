@@ -1,6 +1,6 @@
 import React from 'react';
 import { Page } from '../types';
-import { BookOpenIcon, UsersIcon, OrchestrationIcon, WandIcon, FolderIcon, SettingsIcon, DevToolsIcon } from './icons';
+import { BookOpenIcon, UsersIcon, OrchestrationIcon, WandIcon, FolderIcon, SettingsIcon, DevToolsIcon, GlobeIcon } from './icons';
 
 interface HeaderProps {
     currentPage: Page;
@@ -35,7 +35,8 @@ const Header: React.FC<HeaderProps> = ({ currentPage, onNavigate }) => {
         { page: 'records', label: 'Records', icon: <BookOpenIcon className="w-6 h-6"/> },
         { page: 'refinery', label: 'Refinery', icon: <WandIcon className="w-6 h-6"/> },
         { page: 'agents', label: 'Agents', icon: <UsersIcon className="w-6 h-6"/> },
-        { page: 'orchestration', label: 'Workbench', icon: <OrchestrationIcon className="w-6 h-6"/> },
+        { page: 'domainOrchestration', label: 'Orchestration', icon: <OrchestrationIcon className="w-6 h-6"/> },
+        { page: 'orchestration', label: 'Site Analysis', icon: <GlobeIcon className="w-6 h-6"/> },
         { page: 'files', label: 'GitHub Files', icon: <FolderIcon className="w-6 h-6"/> },
         { page: 'settings', label: 'Settings', icon: <SettingsIcon className="w-6 h-6"/> },
         { page: 'devtools', label: 'Dev Tools', icon: <DevToolsIcon className="w-6 h-6"/> },

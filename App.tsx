@@ -11,6 +11,7 @@ import SettingsPage from './components/SettingsPage';
 import DevToolsPage from './components/DevToolsPage';
 import FloatingNav from './components/FloatingNav';
 import InstructionsPanel from './components/InstructionsPanel';
+import DomainOrchestrationPage from './components/DomainOrchestrationPage';
 
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
         return <AgentsPage onNavigate={setCurrentPage} />;
       case 'orchestration':
         return <OrchestrationPage />;
+      case 'domainOrchestration':
+        return <DomainOrchestrationPage />;
       case 'files':
         return <FilesPage />;
       case 'settings':

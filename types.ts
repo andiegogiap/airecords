@@ -69,7 +69,7 @@ export type Agent = {
     associatedWorkflowIds: string[];
 };
 
-export type Page = 'records' | 'refinery' | 'agents' | 'orchestration' | 'files' | 'settings' | 'devtools';
+export type Page = 'records' | 'refinery' | 'agents' | 'orchestration' | 'files' | 'settings' | 'devtools' | 'domainOrchestration';
 
 export type Suggestion = {
     name: string;
